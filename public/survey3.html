@@ -110,14 +110,20 @@
             $("#saveFeelingsForm").on("submit", function (event) {
                 event.preventDefault();
                 var selectedArray = [];
-                $('input:checkbox.form-check-input').each(function () {
-                    if (this.checked) {
+                $('input:checked').each(function () {
+                    // if (this.checked) {
                         selectedArray.push($(this).attr("data-id"))
-                    };
+                    // };
                 });
+                // console.log(selectedArray)
+                // selectedArray.forEach(function (element) {
+                    $.ajax({ url: "/data/api/feelings", method: "POST", data: { feelings: selectedArray} })
+                    .then(function(res){
+                        console.log(res);
+                    })
+                    
 
-                selectedArray.forEach(function (element) {
-                    $.ajax({ url: "models/api/feelings", method: "GET" })
+
                     //     //         .then(function (sendfeelingsobjectToresultsPage) {
                     //     //             console.log(thefeelingsObjectsent);
                     //         // get info from feelings, post to user feelings the data that is returned
@@ -126,7 +132,7 @@
                     //     //         .then(function (sendfeelingsobjectToresultsPage) {
                     //     //             console.log(thefeelingsObjectsent);
                     //     // })
-                });
+                // });
 
 
 
@@ -177,6 +183,8 @@
 
                 // });
             });
+
+        });
 
     </script>
 

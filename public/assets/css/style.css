@@ -1,0 +1,79 @@
+body {
+
+    background-image: url(../images/color.jpg)
+  }
+
+  #btn {
+  
+    background: none;
+    border: none;
+    cursor:pointer;
+    padding-bottom:25px;
+    padding-left:160px;
+    
+  }
+  
+  #btn:hover {
+  
+    background-color: none;
+  }
+
+  .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .fa-github:before {
+  
+    padding-bottom: 10px;
+    padding-left:750px;
+    
+  }
+
+  #feeling {
+
+    background-color: rgb(85, 33, 85);
+    border-radius: 50%;
+    font-size: 80px;
+    height:130px;
+    margin:20px;
+    margin-left:40px;
+    width:130px;
+  }
+
+  #footer {
+
+    padding-left:20px;
+  }
+
+
+  #heading {
+  
+    font-family: 'Oswald', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Poor Story', cursive;
+    font-family: 'Aleo', serif;
+    padding-bottom:20px;
+    padding-top:40px;
+    text-align: center;
+  }
+  
+  .jumbotron {
+  
+    margin: auto;
+    margin-bottom: 20px;
+    width:80%;
+  }
+  
+  #para1 {
+  
+    text-align: center;
+  }
+  
+  #row1 {
+  
+    align-content: center;
+  }
+
+  

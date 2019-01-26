@@ -1,4 +1,4 @@
-var feelings = [
+[
   {
     "feeling_id": 1,
     "feeling_group": "Joy",
@@ -651,4 +651,4 @@ var feelings = [
   }
   ]
   
-  module.exports = feelings;
+ 
