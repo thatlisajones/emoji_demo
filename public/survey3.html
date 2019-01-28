@@ -87,8 +87,9 @@
         </form>
 
     </div>
-
-    <div id="feelingsHolder"> </div>
+<br>
+    <div class="container" id="feelingsHolder" style="font-size: 20pt" > </div>
+    
 
     <br>
 
@@ -128,8 +129,9 @@
                     var feelingName1 = $("<p>").text("You're feeling: " + resultObj[0].feeling_name + " ... " + resultObj[0].feeling_def);
                     var feelingName2 = $("<p>").text("You're feeling: " + resultObj[1].feeling_name + " ... " + resultObj[1].feeling_def);
                     var feelingName3 = $("<p>").text("You're feeling: " + resultObj[2].feeling_name + " ... " + resultObj[2].feeling_def);
+                    var diaryLink = $("<p>").text("Log this in your Emoji Diary");
 
-
+                    resultsDiv.prepend(diaryLink);
                     resultsDiv.prepend(feelingName1);
                     resultsDiv.prepend(feelingName2);
                     resultsDiv.prepend(feelingName3);
