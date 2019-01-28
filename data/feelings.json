@@ -41,7 +41,7 @@
     "feeling_id": 5,
     "feeling_group": "Joy",
     "feeling_name":"Creative",
-    "feeling_emoji":"&#x1F58C",
+    "feeling_emoji":"&#x1F3A8",
     "feeling_color":"#32CD32",
     "feeling_def": "full of desire to express imagination or ideas",
     "feeling_value":105
@@ -176,7 +176,7 @@
     "feeling_id": 20,
     "feeling_group": "Peace",
     "feeling_name":"Kind",
-    "feeling_emoji":"&#x1F46D",
+    "feeling_emoji":"&#x1F54A",
     "feeling_color":"#FF00FF",
     "feeling_def": "feeling friendly and considerate",
     "feeling_value":208
@@ -365,7 +365,7 @@
     "feeling_id": 41,
     "feeling_group": "Sadness",
     "feeling_name":"Uninterested",
-    "feeling_emoji":"&#x1F4A4",
+    "feeling_emoji":"&#x1F611",
     "feeling_color":"#E6830A",
     "feeling_def": "not caring about something or someone",
     "feeling_value":405
@@ -590,7 +590,7 @@
     "feeling_id": 66,
     "feeling_group": "Fear",
     "feeling_name":"Anxious",
-    "feeling_emoji":"&#x1F630",
+    "feeling_emoji":"&#x1F6A8",
     "feeling_color":"#FFFFE0",
     "feeling_def": "feeling worry, unease, or nervousness, typically about an imminent event or something with an uncertain outcome",
     "feeling_value":606
@@ -617,7 +617,7 @@
     "feeling_id": 69,
     "feeling_group": "Fear",
     "feeling_name":"Inadequate",
-    "feeling_emoji":"&#x2B55",
+    "feeling_emoji":"&#x1F573",
     "feeling_color":"#FAFAD2",
     "feeling_def": "feeling unable to deal with a situation or with life",
     "feeling_value":609
