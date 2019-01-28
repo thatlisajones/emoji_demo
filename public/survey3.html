@@ -87,18 +87,19 @@
         </form>
 
     </div>
-<br>
-    <div class="container" id="feelingsHolder" style="font-size: 20pt" > </div>
-    
+    <br>
+    <div class="container" id="feelingsHolder" style="font-size: 18pt"> </div>
+
 
     <br>
-
-    <div class="row">
-        <div class="col-md-12 py-3 ml-2">
-            <span>
-                <a href="home.html">Home</a> | <a href="readme">About This App</a> |
-                <a href="https://github.com/?????" target="_blank">GitHub Repository</a>
-            </span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 py-3 ml-2">
+                <span>
+                    <a href="home.html">Home</a> | <a href="readme">About This App</a> |
+                    <a href="https://github.com/?????" target="_blank">GitHub Repository</a>
+                </span>
+            </div>
         </div>
     </div>
     <br>
@@ -115,22 +116,24 @@
                 var selectedArray = [];
                 $('input:checked').each(function () {
                     // if (this.checked) {
-                    selectedArray.push($(this).attr("data-id"))
+                    selectedArray.push($(this).attr("data-id"));
+
                     // };
                 });
-                
+
                 $.ajax({
                     url: "/data/api/feelings", method: "POST", data: { feelings: selectedArray }
 
                 }).then(function (result) {
                     var resultObj = (result);
-                   
-                    var resultsDiv = $("<div>");
-                    var feelingName1 = $("<p>").text("You're feeling: " + resultObj[0].feeling_name + " ... " + resultObj[0].feeling_def);
-                    var feelingName2 = $("<p>").text("You're feeling: " + resultObj[1].feeling_name + " ... " + resultObj[1].feeling_def);
-                    var feelingName3 = $("<p>").text("You're feeling: " + resultObj[2].feeling_name + " ... " + resultObj[2].feeling_def);
-                    var diaryLink = $("<p>").text("Log this in your Emoji Diary");
 
+                    var resultsDiv = $("<div>");
+                    var feelingName1 = $("<p>").text("You're feeling ... " + resultObj[0].feeling_name + " ... " + resultObj[0].feeling_def + "!");
+                    var feelingName2 = $("<p>").text("You're feeling ... " + resultObj[1].feeling_name + " ... " + resultObj[1].feeling_def + "!");
+                    var feelingName3 = $("<p>").text("You're feeling ... " + resultObj[2].feeling_name + " ... " + resultObj[2].feeling_def + "!");
+                    var diaryLink = $("<a href='/diary.html' >Click to go to your Emoji Diary</a>");
+
+                   
                     resultsDiv.prepend(diaryLink);
                     resultsDiv.prepend(feelingName1);
                     resultsDiv.prepend(feelingName2);
