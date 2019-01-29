@@ -16,6 +16,17 @@ var cors = require("cors");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+if (process.envJAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connecton = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'feelings_db'
+  });
+};
+
 // Requiring our models for syncing
 var db = require("./models");
 app.use(cors());
