@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -5,12 +8,14 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <meta name="google-signin-client_id" content="651480339498-te4brvnjjs85338leb2pj0cba0ougn1b.apps.googleusercontent.com"> 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
     crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Noto+Serif+SC" rel="stylesheet">
 
   <title>Emoji Diary</title>
 </head>
@@ -19,47 +24,265 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="jumbotron jumbotron-fluid text-center">
+        <div id="container">
           <span class="jumbotronStyle">
-            <h1 class="display-4"><span class="far fa-kiss-wink-heart"></span>Emoji Diary</h1>
+            <h1 id="h1Text" class="display-4"><span class="far fa-kiss-wink-heart"></span>Emoji Diary</h1>
           </span>
           <hr>
-          <h3 class="display-5 py-3">How are you feeling?</h3>
-          <h5 class="display-5 py-3">Click the emoji that best matches your mood.</h5>
+          <h3 id="headingText" class="display-5 py-3">How are you feeling?</h3>
+          <h5 id="headingText" class="display-5 py-3">Click the emoji that best matches your mood.</h5>
           <div class="text-center mx-auto py-3">
             <br>
             <div class="row">
-              <div class="col-sm" style="color:red"><a href="survey5.html"><i class="far fa-angry fa-7x"></i></a></div>
-              <div class="col-sm" style="color:green"><a href="survey1.html"><i class="far fa-laugh fa-7x"></i></a></div>
-              <div class="col-sm" style="color:orange"><a href="survey4.html"><i class="far fa-sad-tear fa-7x"></i></a></div>
+              <div class="col-sm" style="color:red"><a href="survey5.html"><i id="angry" class="far fa-angry fa-7x"></i></a></div>
+              <div class="col-sm" style="color:green"><a href="survey1.html"><i id="laugh" class="far fa-laugh fa-7x"></i></a></div>
+              <div class="col-sm" style="color:orange"><a href="survey4.html"><i id="sad" class="far fa-sad-tear fa-7x"></i></a></div>
             </div>
+            <br>
+            <br>
             <div class="row">
-              <div class="col-sm" style="color:purple"><a href="survey2.html"><i class="far fa-smile fa-7x"></i></a></div>
+              <div class="col-sm" style="color:purple"><a href="survey2.html"><i id="smile" class="far fa-smile fa-7x"></i></a></div>
               <div class="col-sm" style="color:gold"><a href="survey6.html"><i class="far fa-frown-open fa-7x"></i></a></div>
-              <div class="col-sm" style="color:blue"><a href="survey3.html"><i class="far fa-grin-wink fa-7x"></i></a></div>
+              <div class="col-sm" style="color:blue"><a href="survey3.html"><i id="wink" class="far fa-grin-wink fa-7x"></i></a></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <br>
+  <br>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 py-3 ml-2">
+    <div>
+      <div id="row" class="col-md-12 py-3 ml-2">
         <span>
           <a href="readme">About This App</a> |
-          <a href="https://github.com/thatlisajones/emoji_demo" target="_blank">GitHub Repository</a>
+          <a href="https://github.com/Senecacherry/emojidiary1" target="_blank">GitHub Repository</a>
         </span>
+      </div>
       </div>
     </div>
   </div>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">button</div>  -->
+  <div id="my-signin2"></div>
+  <script>
+
+    
+    function onSignIn(googleUser) {
+      // Useful data for your client-side scripts:
+
+      var profile = googleUser.getBasicProfile();
+      console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+      console.log('Full Name: ' + profile.getName());
+      console.log('Given Name: ' + profile.getGivenName());
+      console.log('Family Name: ' + profile.getFamilyName());
+      console.log("Image URL: " + profile.getImageUrl());
+      console.log("Email: " + profile.getEmail());
+
+      // The ID token you need to pass to your backend:
+      var id_token = googleUser.getAuthResponse().id_token;
+      console.log("ID Token: " + id_token);
+    }
+
+
+
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script> 
+</script>
+
+<!-- <button id="sign-in-or-out-button"
+        style="margin-left: 25px">Sign In/Authorize</button> -->
+<!-- <button id="revoke-access-button" -->
+        <!-- style="display: none; margin-left: 25px">Revoke access</button> -->
+
+<div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script async defer src="https://apis.google.com/js/api.js" 
+        onload="this.onload=function(){};handleClientLoad()" 
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+    <script src="/assets/javascript/login.js">
+    console.log("js and home.html are connected!");
+    </script>
+    
 </body>
 
 </html>
+
+
+
+
+
+
+<!-- <!doctype html>
+<html lang="en">
+
+<head>
+    Required meta tags
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content=651480339498-uvbj93oockffjgg900drtuv1tiabarej.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    Bootstrap CSS
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/united/bootstrap.min.css"
+        crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Aleo|Oswald:700|PT+Sans|Poor+Story" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="public/styles/animate.min.css">
+
+    <title>Emoji Diary</title>
+</head>
+
+<body>
+    <h1 id="heading">Welcome to Emoji Diary!</h1>
+    <br>
+
+    <div class="jumbotron">
+            <h1 class="display-3"></h1>
+            <p class="lead">
+                <div id="row1" class="row">
+                    <a href="page index/anger.html" class="col-lg-4" id="btn" style="color:red;border-color:black"><i class="far fa-angry fa-7x"></i></a>
+                    <a href="page index/laugh.html" class="col-lg-4" id="btn" style="color:green"><i class="fas fa-laugh-beam fa-7x"></i></a>
+                    <a href="page index/sad.html" class="col-lg-4" id="btn" style="color:orange"><i class="far fa-sad-tear fa-7x"></i></a>
+                 </div>
+                 <br>
+                 <br>
+                 <div class="row">
+                    <a href="page index/happy.html" class="col-lg-4" id="btn" style="color:purple"><i class="far fa-smile fa-7x"></i></a>
+                    <a href="page index/frown.html" class="col-lg-4" id="btn" style="color:gold"><i class="far fa-frown-open fa-7x"></i></a>
+                    <a href="page index/wink.html" class="col-lg-4" id="btn" style="color:blue"><i class="far fa-grin-wink fa-7x"></i></a>
+                 </div></p>
+            <hr class="my-4">
+            <p id="para1">Which emoji represents your mood?!</p>
+
+        </div>
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">button</div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      }
+    </script>
+            
+          
+    
+
+    Optional JavaScript
+    jQuery first, then Popper.js, then Bootstrap JS and finally google auth script
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+        
+       
+</body>
+
+<a href="https://github.com/Senecacherry/emojidiary1" target="blank" id="footer"><i class="fab fa-github"></i></a>
+</html>
+
+
+
+
+
+<html>
+<head>
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+</head>
+<body>
+  <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html> -->
+
+<!-- <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content=651480339498-uvbj93oockffjgg900drtuv1tiabarej.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">button</div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      }
+    </script>
+  </body>
+</html> -->

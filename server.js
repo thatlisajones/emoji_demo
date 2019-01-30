@@ -8,6 +8,7 @@ var express = require("express");
 var session = require("express-session");
 var sequelize = require("sequelize");
 var mysql = require("mysql")
+require('dotenv').config()
 // Requiring passport as we've configured it
 // var passport = require("./config/passport");
 var cors = require("cors");
@@ -15,17 +16,6 @@ var cors = require("cors");
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
-
-if (process.envJAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  connecton = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'feelings_db'
-  });
-};
 
 // Requiring our models for syncing
 var db = require("./models");

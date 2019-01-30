@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
 
@@ -24,9 +26,9 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron jumbotron-fluid text-center">
+        <div>
             <span class="jumbotronStyle">
-                <h3 class="display-5 py-3">Check THREE emoji that apply to you right now:</h3>
+                <h3 id="survey" class="display-5 py-3">Check THREE emoji that apply to you right now:</h3>
             </span>
         </div>
         <form id="saveFeelingsForm">
@@ -80,6 +82,9 @@
                     <label class="form-check-label" for="feelingId72" style="font-size: 80px">&#x1F631</label>
                 </div>
             </div>
+
+            <br>
+            <br>
             <!-- Button submit -->
             <button type="submit" class="btn btn-primary btn-lg btn-block" id="saveFeelings" value="Submit">
                 Submit your choices.
@@ -92,8 +97,9 @@
 
 
     <br>
+    <br>
     <div class="container">
-        <div class="row">
+        <div id="row" class="row">
             <div class="col-md-12 py-3 ml-2">
                 <span>
                     <a href="home.html">Home</a> | <a href="readme">About This App</a> |

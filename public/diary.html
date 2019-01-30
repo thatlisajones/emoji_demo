@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Calligraffitti|Oswald:700|PT+Sans|Poor+Story" rel="stylesheet">
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 
 <body class="diarybody">
@@ -53,6 +53,35 @@
         <div id="links" class="col-md-12 py-3 ml-2">
             <span>
                 <a href="/api/feelings">API Feelings List</a> |
+
+				<a href="https://github.com/Senecacherry/emojidiary1" target="_blank">GitHub Repository</a>
+				
+			</span>
+			<div id="plot">
+				    <canvas id="myChart" width="1600" height="900"></canvas>
+				    <script>
+				      new Chart(document.getElementById("myChart"), {
+				          type: 'polarArea',
+				          data: {
+				            labels: [ "Joy", "Peace", "Confidence", "Sadness", "Anger", "Fear" ],
+				            datasets: [ {
+				              label: "Population (millions)",
+				              backgroundColor: [ "#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850", "#333333" ],
+				              data: [ 2478, 5267, 734, 784, 433, 100 ]
+				            } ]
+				          },
+				          options: {
+				            title: {
+				              display: true,
+				              text: 'Moods'
+				            }
+				          }
+				        });
+				    </script>
+				  </div>
+
+
+            </div>
                 <a href="https://github.com/Senecacherry/emojidiary1" target="_blank">GitHub Repository</a>
             </span>
         </div>

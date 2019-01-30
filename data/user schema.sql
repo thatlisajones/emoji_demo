@@ -1,6 +1,6 @@
 
-CREATE DATABASE feeling_db;
-USE feeling_db;
+CREATE DATABASE feelings_db;
+USE feelings_db;
 
 CREATE TABLE user
 (
