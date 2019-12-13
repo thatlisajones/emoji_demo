@@ -10,7 +10,7 @@
     "express-session": "^1.15.6",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
-    "npm": "^6.9.0",
+    "npm": "^6.13.4",
     "sequelize": "^5.15.1"
   },
   "devDependencies": {},
